@@ -1,0 +1,11 @@
+{
+  "name": "krinken-proxy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/vramdal/krinken/proxy",
+  "author": "Vidar S. Ramdal",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2"
+  }
+}
