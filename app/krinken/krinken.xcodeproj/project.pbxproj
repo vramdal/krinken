@@ -1,0 +1,527 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C314CE7C1FA532AA0078A8F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C314CE7B1FA532AA0078A8F4 /* AppDelegate.swift */; };
+		C314CE7F1FA532AA0078A8F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C314CE7E1FA532AA0078A8F4 /* Assets.xcassets */; };
+		C314CE8A1FA532AA0078A8F4 /* krinkenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C314CE891FA532AA0078A8F4 /* krinkenTests.swift */; };
+		C314CE951FA532AA0078A8F4 /* krinkenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C314CE941FA532AA0078A8F4 /* krinkenUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C314CE861FA532AA0078A8F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C314CE701FA532AA0078A8F4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C314CE771FA532AA0078A8F4;
+			remoteInfo = krinken;
+		};
+		C314CE911FA532AA0078A8F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C314CE701FA532AA0078A8F4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C314CE771FA532AA0078A8F4;
+			remoteInfo = krinken;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C314CE781FA532AA0078A8F4 /* krinken.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = krinken.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C314CE7B1FA532AA0078A8F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C314CE7D1FA532AA0078A8F4 /* application.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = application.js; sourceTree = "<group>"; };
+		C314CE7E1FA532AA0078A8F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C314CE801FA532AA0078A8F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C314CE851FA532AA0078A8F4 /* krinkenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = krinkenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C314CE891FA532AA0078A8F4 /* krinkenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = krinkenTests.swift; sourceTree = "<group>"; };
+		C314CE8B1FA532AA0078A8F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C314CE901FA532AA0078A8F4 /* krinkenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = krinkenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C314CE941FA532AA0078A8F4 /* krinkenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = krinkenUITests.swift; sourceTree = "<group>"; };
+		C314CE961FA532AA0078A8F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C314CE751FA532AA0078A8F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C314CE821FA532AA0078A8F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C314CE8D1FA532AA0078A8F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C314CE6F1FA532AA0078A8F4 = {
+			isa = PBXGroup;
+			children = (
+				C314CE7A1FA532AA0078A8F4 /* krinken */,
+				C314CE881FA532AA0078A8F4 /* krinkenTests */,
+				C314CE931FA532AA0078A8F4 /* krinkenUITests */,
+				C314CE791FA532AA0078A8F4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C314CE791FA532AA0078A8F4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C314CE781FA532AA0078A8F4 /* krinken.app */,
+				C314CE851FA532AA0078A8F4 /* krinkenTests.xctest */,
+				C314CE901FA532AA0078A8F4 /* krinkenUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C314CE7A1FA532AA0078A8F4 /* krinken */ = {
+			isa = PBXGroup;
+			children = (
+				C314CE7B1FA532AA0078A8F4 /* AppDelegate.swift */,
+				C314CE7D1FA532AA0078A8F4 /* application.js */,
+				C314CE7E1FA532AA0078A8F4 /* Assets.xcassets */,
+				C314CE801FA532AA0078A8F4 /* Info.plist */,
+			);
+			path = krinken;
+			sourceTree = "<group>";
+		};
+		C314CE881FA532AA0078A8F4 /* krinkenTests */ = {
+			isa = PBXGroup;
+			children = (
+				C314CE891FA532AA0078A8F4 /* krinkenTests.swift */,
+				C314CE8B1FA532AA0078A8F4 /* Info.plist */,
+			);
+			path = krinkenTests;
+			sourceTree = "<group>";
+		};
+		C314CE931FA532AA0078A8F4 /* krinkenUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C314CE941FA532AA0078A8F4 /* krinkenUITests.swift */,
+				C314CE961FA532AA0078A8F4 /* Info.plist */,
+			);
+			path = krinkenUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C314CE771FA532AA0078A8F4 /* krinken */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C314CE991FA532AA0078A8F4 /* Build configuration list for PBXNativeTarget "krinken" */;
+			buildPhases = (
+				C314CE741FA532AA0078A8F4 /* Sources */,
+				C314CE751FA532AA0078A8F4 /* Frameworks */,
+				C314CE761FA532AA0078A8F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = krinken;
+			productName = krinken;
+			productReference = C314CE781FA532AA0078A8F4 /* krinken.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C314CE841FA532AA0078A8F4 /* krinkenTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C314CE9C1FA532AA0078A8F4 /* Build configuration list for PBXNativeTarget "krinkenTests" */;
+			buildPhases = (
+				C314CE811FA532AA0078A8F4 /* Sources */,
+				C314CE821FA532AA0078A8F4 /* Frameworks */,
+				C314CE831FA532AA0078A8F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C314CE871FA532AA0078A8F4 /* PBXTargetDependency */,
+			);
+			name = krinkenTests;
+			productName = krinkenTests;
+			productReference = C314CE851FA532AA0078A8F4 /* krinkenTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C314CE8F1FA532AA0078A8F4 /* krinkenUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C314CE9F1FA532AA0078A8F4 /* Build configuration list for PBXNativeTarget "krinkenUITests" */;
+			buildPhases = (
+				C314CE8C1FA532AA0078A8F4 /* Sources */,
+				C314CE8D1FA532AA0078A8F4 /* Frameworks */,
+				C314CE8E1FA532AA0078A8F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C314CE921FA532AA0078A8F4 /* PBXTargetDependency */,
+			);
+			name = krinkenUITests;
+			productName = krinkenUITests;
+			productReference = C314CE901FA532AA0078A8F4 /* krinkenUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C314CE701FA532AA0078A8F4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Vidar Ramdal";
+				TargetAttributes = {
+					C314CE771FA532AA0078A8F4 = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+					};
+					C314CE841FA532AA0078A8F4 = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = C314CE771FA532AA0078A8F4;
+					};
+					C314CE8F1FA532AA0078A8F4 = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = C314CE771FA532AA0078A8F4;
+					};
+				};
+			};
+			buildConfigurationList = C314CE731FA532AA0078A8F4 /* Build configuration list for PBXProject "krinken" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C314CE6F1FA532AA0078A8F4;
+			productRefGroup = C314CE791FA532AA0078A8F4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C314CE771FA532AA0078A8F4 /* krinken */,
+				C314CE841FA532AA0078A8F4 /* krinkenTests */,
+				C314CE8F1FA532AA0078A8F4 /* krinkenUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C314CE761FA532AA0078A8F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C314CE7F1FA532AA0078A8F4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C314CE831FA532AA0078A8F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C314CE8E1FA532AA0078A8F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C314CE741FA532AA0078A8F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C314CE7C1FA532AA0078A8F4 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C314CE811FA532AA0078A8F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C314CE8A1FA532AA0078A8F4 /* krinkenTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C314CE8C1FA532AA0078A8F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C314CE951FA532AA0078A8F4 /* krinkenUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C314CE871FA532AA0078A8F4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C314CE771FA532AA0078A8F4 /* krinken */;
+			targetProxy = C314CE861FA532AA0078A8F4 /* PBXContainerItemProxy */;
+		};
+		C314CE921FA532AA0078A8F4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C314CE771FA532AA0078A8F4 /* krinken */;
+			targetProxy = C314CE911FA532AA0078A8F4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C314CE971FA532AA0078A8F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = appletvos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TVOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
+		};
+		C314CE981FA532AA0078A8F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = appletvos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TVOS_DEPLOYMENT_TARGET = 11.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C314CE9A1FA532AA0078A8F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = krinken/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vidarramdal.krinken;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+			};
+			name = Debug;
+		};
+		C314CE9B1FA532AA0078A8F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = krinken/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vidarramdal.krinken;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+			};
+			name = Release;
+		};
+		C314CE9D1FA532AA0078A8F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = krinkenTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vidarramdal.krinkenTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/krinken.app/krinken";
+			};
+			name = Debug;
+		};
+		C314CE9E1FA532AA0078A8F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = krinkenTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vidarramdal.krinkenTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/krinken.app/krinken";
+			};
+			name = Release;
+		};
+		C314CEA01FA532AA0078A8F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = krinkenUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vidarramdal.krinkenUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_TARGET_NAME = krinken;
+			};
+			name = Debug;
+		};
+		C314CEA11FA532AA0078A8F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = krinkenUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vidarramdal.krinkenUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_TARGET_NAME = krinken;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C314CE731FA532AA0078A8F4 /* Build configuration list for PBXProject "krinken" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C314CE971FA532AA0078A8F4 /* Debug */,
+				C314CE981FA532AA0078A8F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C314CE991FA532AA0078A8F4 /* Build configuration list for PBXNativeTarget "krinken" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C314CE9A1FA532AA0078A8F4 /* Debug */,
+				C314CE9B1FA532AA0078A8F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C314CE9C1FA532AA0078A8F4 /* Build configuration list for PBXNativeTarget "krinkenTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C314CE9D1FA532AA0078A8F4 /* Debug */,
+				C314CE9E1FA532AA0078A8F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C314CE9F1FA532AA0078A8F4 /* Build configuration list for PBXNativeTarget "krinkenUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C314CEA01FA532AA0078A8F4 /* Debug */,
+				C314CEA11FA532AA0078A8F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C314CE701FA532AA0078A8F4 /* Project object */;
+}

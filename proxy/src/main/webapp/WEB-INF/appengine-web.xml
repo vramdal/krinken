@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<appengine-web-app xmlns="http://appengine.google.com/ns/1.0">
+    <application>my-application</application>
+    <module>default</module>
+    <version>uno</version>
+    <threadsafe>true</threadsafe>
+</appengine-web-app>
