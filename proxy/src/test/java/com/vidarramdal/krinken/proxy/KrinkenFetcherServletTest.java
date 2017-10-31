@@ -5,46 +5,20 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.junit.Test;
 
-import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
+import javax.servlet.WriteListener;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpServletResponseWrapper;
 import javax.xml.transform.TransformerException;
 import java.io.*;
 import java.nio.charset.Charset;
+import java.util.Collection;
 import java.util.Locale;
 
 import static com.vidarramdal.krinken.proxy.KrinkenFetcherServlet.PATH_XSLT;
 
 public class KrinkenFetcherServletTest {
 
-    @Test
-    public void testGet() throws IOException, ServletException {
-        KrinkenFetcherServlet servlet = new KrinkenFetcherServlet();
-        final HttpServletResponseWrapper resp = new HttpServletResponseWrapper(new MockHttpServletResponse()) {
-            @Override
-            public ServletOutputStream getOutputStream() throws IOException {
-                return new ServletOutputStream() {
-                    @Override
-                    public void write(int b) throws IOException {
-                        System.out.write(b);
-                    }
-                };
-            }
-
-            @Override
-            public void setContentType(String type) {
-                // Ignore
-            }
-
-            @Override
-            public void setCharacterEncoding(String charset) {
-                // Ignore
-            }
-        };
-        servlet.doGet(null, resp);
-    }
 
 
     @Test
@@ -85,6 +59,16 @@ public class KrinkenFetcherServletTest {
         @Override
         public ServletOutputStream getOutputStream() throws IOException {
             return new ServletOutputStream() {
+                @Override
+                public boolean isReady() {
+                    return true;
+                }
+
+                @Override
+                public void setWriteListener(WriteListener writeListener) {
+
+                }
+
                 @Override
                 public void write(int b) throws IOException {
                     System.out.write(b);
@@ -187,6 +171,26 @@ public class KrinkenFetcherServletTest {
         }
 
         @Override
+        public int getStatus() {
+            return 0;
+        }
+
+        @Override
+        public String getHeader(String s) {
+            return null;
+        }
+
+        @Override
+        public Collection<String> getHeaders(String s) {
+            return null;
+        }
+
+        @Override
+        public Collection<String> getHeaderNames() {
+            return null;
+        }
+
+        @Override
         public String getCharacterEncoding() {
             return null;
         }
@@ -203,6 +207,11 @@ public class KrinkenFetcherServletTest {
 
         @Override
         public void setContentLength(int i) {
+
+        }
+
+        @Override
+        public void setContentLengthLong(long l) {
 
         }
 
