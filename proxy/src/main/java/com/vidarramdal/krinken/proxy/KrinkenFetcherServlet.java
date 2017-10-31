@@ -1,6 +1,20 @@
 package com.vidarramdal.krinken.proxy;
 
 import com.google.appengine.repackaged.com.google.common.io.Resources;
+import net.sf.saxon.Configuration;
+import net.sf.saxon.expr.StringTokenIterator;
+import net.sf.saxon.expr.XPathContext;
+import net.sf.saxon.lib.ExtensionFunctionCall;
+import net.sf.saxon.lib.ExtensionFunctionDefinition;
+import net.sf.saxon.om.Item;
+import net.sf.saxon.om.SequenceIterator;
+import net.sf.saxon.om.StructuredQName;
+import net.sf.saxon.s9api.Processor;
+import net.sf.saxon.trans.XPathException;
+import net.sf.saxon.value.Int64Value;
+import net.sf.saxon.value.IntegerValue;
+import net.sf.saxon.value.SequenceType;
+import org.apache.xml.utils.ListingErrorHandler;
 import org.dom4j.dom.DOMDocument;
 import org.jsoup.Jsoup;
 import org.jsoup.helper.W3CDom;
@@ -16,10 +30,7 @@ import javax.xml.transform.*;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
@@ -76,9 +87,8 @@ public class KrinkenFetcherServlet extends HttpServlet {
             for (Plug plug : plugList) {
                 System.out.println(plug.getProgramnavn() + ": " + plug.getTittel());
             }
-            StringBuffer stringBuffer = new StringBuffer();
             ByteArrayOutputStream xmlOut = new ByteArrayOutputStream();
-            transform(xmlOut, jsoupDoc, xsltStream, new Forside(channelList, plugList), frontpageXsltStream);
+            transform(xmlOut, jsoupDoc, new Forside(channelList, plugList), frontpageXsltStream);
             String appTemplateStr = Resources.toString(Resources.getResource("app-template.js"), Charset.forName("UTF-8"));
             String result = appTemplateStr.replace("<!-- INSERT SCRIPT HERE -->", xmlOut.toString("utf-8"));
             outputStream.write(result.getBytes("UTF-8"));
@@ -103,7 +113,7 @@ public class KrinkenFetcherServlet extends HttpServlet {
 */
     }
 
-    void transform(OutputStream outputStream, Document jsoupDoc, InputStream xsltStream, Forside forside, InputStream frontpageXsltStream) throws TransformerException {
+    void transform(OutputStream outputStream, Document jsoupDoc, Forside forside, InputStream frontpageXsltStream) throws TransformerException {
         org.w3c.dom.Document w3cDoc = new W3CDom().fromJsoup(jsoupDoc);
         Source inputSource = new DOMSource(w3cDoc);
         Source xsltSource = new StreamSource(frontpageXsltStream);
@@ -112,6 +122,49 @@ public class KrinkenFetcherServlet extends HttpServlet {
         transformer.setParameter("channelList", forside.getSource(new DOMDocument()));
         transformer.transform(inputSource, new StreamResult(outputStream));
     }
+
+    void transformJsoup(OutputStream outputStream, Document jsoupDoc, InputStream frontpageXsltStream) throws TransformerException {
+        org.w3c.dom.Document w3cDoc = new W3CDom().fromJsoup(jsoupDoc);
+        Source inputSource = new DOMSource(w3cDoc);
+        Source xsltSource = new StreamSource(frontpageXsltStream);
+        final Configuration config = new Configuration();
+        config.registerExtensionFunction(new ExtensionFunctionDefinition() {
+            @Override
+            public StructuredQName getFunctionQName() {
+                return new StructuredQName("jsoup", "http://vvv.vidarramdal.com/ns/jsoup", "select");
+            }
+
+            @Override
+            public SequenceType[] getArgumentTypes() {
+                return new SequenceType[0];
+            }
+
+            @Override
+            public SequenceType getResultType(SequenceType[] sequenceTypes) {
+                return SequenceType.SINGLE_STRING;
+            }
+
+            @Override
+            public ExtensionFunctionCall makeCallExpression() {
+                return new ExtensionFunctionCall() {
+                    @Override
+                    public SequenceIterator<? extends Item> call(SequenceIterator<? extends Item>[] sequenceIterators, XPathContext xPathContext) throws XPathException {
+                        return new StringTokenIterator("Laks!");
+                    }
+
+                };
+            }
+        });
+        // http://www.saxonica.com/documentation9.6/#!extensibility/integratedfunctions/ext-full-J
+        // http://saxon.sourceforge.net/saxon6.5/extensibility.html#Writing-extension-elements
+
+        TransformerFactory fact = new net.sf.saxon.TransformerFactoryImpl(config);
+//        fact.setErrorListener(new ListingErrorHandler(new PrintWriter(System.err, true)));
+        Transformer transformer = fact.newTransformer(xsltSource);
+
+        transformer.transform(inputSource, new StreamResult(outputStream));
+    }
+
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp)
