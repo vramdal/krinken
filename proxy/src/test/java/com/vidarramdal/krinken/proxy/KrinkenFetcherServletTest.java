@@ -3,6 +3,8 @@ package com.vidarramdal.krinken.proxy;
 import com.google.appengine.repackaged.com.google.common.io.Resources;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.parser.HtmlTreeBuilder;
+import org.jsoup.parser.Parser;
 import org.junit.Test;
 
 import javax.servlet.ServletOutputStream;
@@ -35,6 +37,7 @@ public class KrinkenFetcherServletTest {
         System.out.println(result);
 
     }
+
 
     @Test
     public void testJsoupXsl() throws IOException, TransformerException {

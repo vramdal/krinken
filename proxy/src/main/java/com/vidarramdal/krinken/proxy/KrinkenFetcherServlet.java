@@ -1,19 +1,9 @@
 package com.vidarramdal.krinken.proxy;
 
 import com.google.appengine.repackaged.com.google.common.io.Resources;
-import net.sf.saxon.Configuration;
-import net.sf.saxon.expr.StringTokenIterator;
-import net.sf.saxon.expr.XPathContext;
-import net.sf.saxon.lib.ExtensionFunctionCall;
-import net.sf.saxon.lib.ExtensionFunctionDefinition;
-import net.sf.saxon.om.Item;
-import net.sf.saxon.om.SequenceIterator;
-import net.sf.saxon.om.StructuredQName;
-import net.sf.saxon.trans.XPathException;
-import net.sf.saxon.value.SequenceType;
-import org.dom4j.dom.DOMDocument;
+import com.sun.org.apache.xerces.internal.dom.DocumentImpl;
+import com.vidarramdal.krinken.proxy.jsoupdom.JsoupToDomConverter;
 import org.jsoup.Jsoup;
-import org.jsoup.helper.W3CDom;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
@@ -72,7 +62,7 @@ public class KrinkenFetcherServlet extends HttpServlet {
             resp.setCharacterEncoding("utf-8");
             resp.setContentType("text/javascript");
             ServletOutputStream outputStream = resp.getOutputStream();
-//            Document jsoupDoc = fetch();
+//            NodeWrapper jsoupDoc = fetch();
             Document jsoupDoc = Jsoup.parse(htmlStream, "utf-8", "/");
             String selector = "#main .channel-grid .nrk-grid .radio-channel";
             Function<Element, Channel> factory = Channel::new;
@@ -116,53 +106,26 @@ public class KrinkenFetcherServlet extends HttpServlet {
     }
 
     void transform(OutputStream outputStream, Document jsoupDoc, Forside forside, InputStream frontpageXsltStream) throws TransformerException {
-        org.w3c.dom.Document w3cDoc = new W3CDom().fromJsoup(jsoupDoc);
+        org.w3c.dom.Document w3cDoc = new JsoupToDomConverter().fromJsoup(jsoupDoc);
         Source inputSource = new DOMSource(w3cDoc);
         Source xsltSource = new StreamSource(frontpageXsltStream);
-        TransformerFactory fact = new net.sf.saxon.TransformerFactoryImpl();
-        Transformer transformer = fact.newTransformer(xsltSource);
-        transformer.setParameter("channelList", forside.getSource(new DOMDocument()));
+        Transformer transformer = TransformerFactory.newInstance().newTransformer(xsltSource);
+        transformer.setParameter("channelList", forside.getSource(new DocumentImpl()));
         transformer.transform(inputSource, new StreamResult(outputStream));
     }
 
     void transformJsoup(OutputStream outputStream, Document jsoupDoc, InputStream frontpageXsltStream) throws TransformerException {
-        org.w3c.dom.Document w3cDoc = new W3CDom().fromJsoup(jsoupDoc);
+        org.w3c.dom.Document w3cDoc = new JsoupToDomConverter().fromJsoup(jsoupDoc);
         Source inputSource = new DOMSource(w3cDoc);
         Source xsltSource = new StreamSource(frontpageXsltStream);
-        final Configuration config = new Configuration();
-        config.registerExtensionFunction(new ExtensionFunctionDefinition() {
-            @Override
-            public StructuredQName getFunctionQName() {
-                return new StructuredQName("jsoup", "http://vvv.vidarramdal.com/ns/jsoup", "select");
-            }
 
-            @Override
-            public SequenceType[] getArgumentTypes() {
-                return new SequenceType[0];
-            }
+        // http://www.saxonica.com/documentation/index.html#!extensibility/instructions
 
-            @Override
-            public SequenceType getResultType(SequenceType[] sequenceTypes) {
-                return SequenceType.SINGLE_STRING;
-            }
-
-            @Override
-            public ExtensionFunctionCall makeCallExpression() {
-                return new ExtensionFunctionCall() {
-                    @Override
-                    public SequenceIterator<? extends Item> call(SequenceIterator<? extends Item>[] sequenceIterators, XPathContext xPathContext) throws XPathException {
-                        return new StringTokenIterator("Laks!");
-                    }
-
-                };
-            }
-        });
         // http://www.saxonica.com/documentation9.6/#!extensibility/integratedfunctions/ext-full-J
         // http://saxon.sourceforge.net/saxon6.5/extensibility.html#Writing-extension-elements
 
-        TransformerFactory fact = new net.sf.saxon.TransformerFactoryImpl(config);
 //        fact.setErrorListener(new ListingErrorHandler(new PrintWriter(System.err, true)));
-        Transformer transformer = fact.newTransformer(xsltSource);
+        Transformer transformer = TransformerFactory.newInstance().newTransformer(xsltSource);
 
         transformer.transform(inputSource, new StreamResult(outputStream));
     }

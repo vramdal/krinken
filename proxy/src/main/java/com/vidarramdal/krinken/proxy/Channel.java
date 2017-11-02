@@ -1,6 +1,5 @@
 package com.vidarramdal.krinken.proxy;
 
-import org.apache.xerces.dom.DocumentFragmentImpl;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Selector;
 import org.w3c.dom.Document;
@@ -28,9 +27,9 @@ public class Channel {
         this.title = Selector.select("a.channel-link", element).attr("title");
         this.svgLogo = Selector.select("svg", element).first();
 /*
-        this.element = new org.jdom.Element("Channel")
-                .addContent(new org.jdom.Element("title").addContent(this.title))
-                .addContent(new org.jdom.Element("svgLogo").addContent(svgLogo.toString()));
+        this.element = new org.jdom.ElementWrapper("Channel")
+                .addContent(new org.jdom.ElementWrapper("title").addContent(this.title))
+                .addContent(new org.jdom.ElementWrapper("svgLogo").addContent(svgLogo.toString()));
 */
     }
 
